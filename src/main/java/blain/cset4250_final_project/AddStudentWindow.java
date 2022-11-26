@@ -202,7 +202,6 @@ public class AddStudentWindow extends javax.swing.JFrame {
                             row.add(UsernamejTextField.getText());
                             row.add("null");
                             row.add("null");
-                            row.add("null");
                             model.addRow(row);
                             this.dispose();
                         } else {
@@ -213,7 +212,6 @@ public class AddStudentWindow extends javax.swing.JFrame {
                                 row.add(model.getValueAt(j, 1));
                                 row.add(model.getValueAt(j, 2));
                                 row.add(UsernamejTextField.getText());
-                                row.add("null");
                                 row.add("null");
                                 row.add("null");
                                 model.addRow(row);

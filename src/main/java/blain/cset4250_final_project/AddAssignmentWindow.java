@@ -192,7 +192,6 @@ public class AddAssignmentWindow extends javax.swing.JFrame {
                     row.add(student);
                     row.add("null");
                     row.add("null");
-                    row.add("null");
                     model.addRow(row);
                 }
             }
