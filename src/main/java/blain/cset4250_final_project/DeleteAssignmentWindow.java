@@ -5,6 +5,10 @@
 package blain.cset4250_final_project;
 
 import java.util.HashSet;
+import javax.swing.BorderFactory;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,7 +21,7 @@ public class DeleteAssignmentWindow extends javax.swing.JFrame {
      * Creates new form DeleteAssignmentButton
      */
     public DeleteAssignmentWindow() {
-        initComponents();
+        NewInitComponents();
     }
 
     /**
@@ -122,6 +126,102 @@ public class DeleteAssignmentWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void NewInitComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        CourseTitleTextField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        AssignmentTitleTextField = new javax.swing.JTextField();
+        CancelButton = new javax.swing.JButton();
+        SubmitButton = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(430, 300));
+        setResizable(false);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Delete Asssignment Window");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setText("Course Title");
+
+        CourseTitleTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CourseTitleTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Assignment Title");
+
+        AssignmentTitleTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AssignmentTitleTextFieldActionPerformed(evt);
+            }
+        });
+
+        CancelButton.setText("Cancel");
+        CancelButton.setMaximumSize(new java.awt.Dimension(200, 23));
+        CancelButton.setMinimumSize(new java.awt.Dimension(200, 23));
+        CancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelButtonActionPerformed(evt);
+            }
+        });
+
+        SubmitButton.setText("Submit");
+        SubmitButton.setMaximumSize(new java.awt.Dimension(200, 23));
+        SubmitButton.setMinimumSize(new java.awt.Dimension(200, 23));
+        SubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel4)
+                                        .addComponent(CourseTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                        .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(AssignmentTitleTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CourseTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(AssignmentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        pack();
+        this.setLocationRelativeTo(null);
+    }
+
     private void CourseTitleTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CourseTitleTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CourseTitleTextFieldActionPerformed
@@ -139,65 +239,73 @@ public class DeleteAssignmentWindow extends javax.swing.JFrame {
         model = MainPage.getjTable1Model();
         HashSet<String> InitialCourses = MainPage.getInitialCourses();
         HashSet<String> InitialAssignments = MainPage.getInitialAssignments();
+        JDialog dialog;
 
         int initialModelRowCount = model.getRowCount();
 
         String requestedCourse = CourseTitleTextField.getText();
         String requestedAssignmentTitle = AssignmentTitleTextField.getText();
 
-        if (InitialCourses.contains(requestedCourse)) {
-            if (InitialAssignments.contains(requestedAssignmentTitle)) {
-                for (int j = 0; j < initialModelRowCount; j++) {
-                    System.out.println(requestedCourse);
-                    System.out.println("Model: " + model.getValueAt(j, 0));
-                    if (requestedCourse.equals(model.getValueAt(j, 0).toString())) {
-                        System.out.println(requestedCourse + " Match");
-                        if (requestedAssignmentTitle.equals(model.getValueAt(j, 2).toString())) {
-                            model.removeRow(j);
-                            initialModelRowCount = model.getRowCount();
+        if (requestedCourse.isBlank()) {
+            dialog = new JDialog(this, "Course Title field is blank.", true);
+            JLabel label = new JLabel("Course Title field is blank.", SwingConstants.CENTER);
+            label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            dialog.add(label);
+            dialog.pack();
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+        } else if (requestedAssignmentTitle.isBlank()) {
+            dialog = new JDialog(this, "Assignment Title field is blank.", true);
+            JLabel label = new JLabel("Assignment Title field is blank.", SwingConstants.CENTER);
+            label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            dialog.add(label);
+            dialog.pack();
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+        } else {
+            if (InitialCourses.contains(requestedCourse)) {
+                if (InitialAssignments.contains(requestedAssignmentTitle)) {
+                    Integer j = 0;
+                    while (j < model.getRowCount()) {
+                        if (requestedCourse.equals(model.getValueAt(j, 0).toString())) {
+                            if (requestedAssignmentTitle.equals(model.getValueAt(j, 2).toString())) {
+                                model.removeRow(j);
+                                j = 0;
+                            } else {
+                                j += 1;
+                            }
+                        } else {
+                            j += 1;
                         }
                     }
+                    this.dispose();
+                } else {
+                    //System.out.println("Requested Assignment is not present in gradebook.");
+                    dialog = new JDialog(this, "Requested Assignment is not present in gradebook.", true);
+                    JLabel label = new JLabel("The Requested Assignment  (" + requestedAssignmentTitle + ")  is not present in the gradebook.", SwingConstants.CENTER);
+                    label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+                    dialog.add(label);
+                    dialog.pack();
+                    dialog.setLocationRelativeTo(this);
+                    dialog.setVisible(true);
                 }
-            } 
-            else {
-                System.out.println("Requested Assignment is not present in gradebook.");
+            } else {
+                //System.out.println("Course is not present in gradebook.");
+                dialog = new JDialog(this, "Course is not present in gradebook.", true);
+                JLabel label = new JLabel("The requestred course  (" + requestedCourse + ") is not present in gradebook.", SwingConstants.CENTER);
+                label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+                dialog.add(label);
+                dialog.pack();
+                dialog.setLocationRelativeTo(this);
+                dialog.setVisible(true);
             }
-        } 
-        else {
-            System.out.println("Course is not present in gradebook.");
         }
-
-        this.dispose();
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DeleteAssignmentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DeleteAssignmentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DeleteAssignmentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DeleteAssignmentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

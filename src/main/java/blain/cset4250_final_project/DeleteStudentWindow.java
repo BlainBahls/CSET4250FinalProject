@@ -6,6 +6,10 @@ package blain.cset4250_final_project;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import javax.swing.BorderFactory;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,7 +22,7 @@ public class DeleteStudentWindow extends javax.swing.JFrame {
      * Creates new form DeleteStudentWindow
      */
     public DeleteStudentWindow() {
-        initComponents();
+        NewInitComponents();
     }
 
     /**
@@ -102,11 +106,11 @@ public class DeleteStudentWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(UsernamejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UsernamejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CoursesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CoursesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelButton1)
@@ -116,6 +120,96 @@ public class DeleteStudentWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NewInitComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        UsernamejTextField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        CoursesjTextField = new javax.swing.JTextField();
+        CancelButton1 = new javax.swing.JButton();
+        SubmitButton = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Delete Student Window");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Student's Username");
+
+        UsernamejTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernamejTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("Course(s) the student should be deleted from (Please use a comma separate multiple courses)");
+
+        CoursesjTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CoursesjTextFieldActionPerformed(evt);
+            }
+        });
+
+        CancelButton1.setText("Cancel");
+        CancelButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelButton1ActionPerformed(evt);
+            }
+        });
+
+        SubmitButton.setText("Submit");
+        SubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(CoursesjTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel2)
+                                        .addComponent(UsernamejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(CancelButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(UsernamejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CoursesjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(CancelButton1)
+                                        .addComponent(SubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+        this.setLocationRelativeTo(null);
+    }
 
     private void UsernamejTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernamejTextFieldActionPerformed
         // TODO add your handling code here:
@@ -129,32 +223,56 @@ public class DeleteStudentWindow extends javax.swing.JFrame {
         DefaultTableModel model;
         model = MainPage.getjTable1Model();
         HashSet<String> InitialStudents = MainPage.getInitialStudents();
-        
-        int initialModelRowCount = model.getRowCount();
-        
+        JDialog dialog;
+
         String[] requestedCourses = CoursesjTextField.getText().split(", ");
         String Username = UsernamejTextField.getText();
-        
-        if (InitialStudents.contains(Username)) {
-            for (String i : requestedCourses) {
-                for (int j = 0; j < initialModelRowCount; j++) {
-                    System.out.println(i);
-                    System.out.println("Model: " + model.getValueAt(j, 0));
-                    if (i.equals(model.getValueAt(j, 0).toString())) {
-                        System.out.println(i + " Match ");
-                        if (Username.equals(model.getValueAt(j, 3).toString())) {
-                            model.removeRow(j);
-                            initialModelRowCount = model.getRowCount();
+
+        if (Username.isBlank()) {
+            dialog = new JDialog(this, "Student Username field is blank.", true);
+            JLabel label = new JLabel("Student Username field is blank.", SwingConstants.CENTER);
+            label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            dialog.add(label);
+            dialog.pack();
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+        } else if (CoursesjTextField.getText().isBlank()) {
+            dialog = new JDialog(this, "Course(s) field is blank.", true);
+            JLabel label = new JLabel("Course(s) field is blank.", SwingConstants.CENTER);
+            label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            dialog.add(label);
+            dialog.pack();
+            dialog.setLocationRelativeTo(this);
+            dialog.setVisible(true);
+        } else {
+            if (InitialStudents.contains(Username)) {
+                for (String i : requestedCourses) {
+                    Integer j = 0;
+                    while (j < model.getRowCount()) {
+                        if (i.equals(model.getValueAt(j, 0).toString())) {
+                            if (Username.equals(model.getValueAt(j, 3).toString())) {
+                                model.removeRow(j);
+                                j = 0;
+                            } else {
+                                j += 1;
+                            }
+                        } else {
+                            j += 1;
                         }
                     }
                 }
+            } else {
+                //System.out.println("Student Username is not present in gradebook.");
+                dialog = new JDialog(this, "Student Username is not present in gradebook.", true);
+                JLabel label = new JLabel("The requested Student Username  (" + Username + ")  is not present in the gradebook.", SwingConstants.CENTER);
+                label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+                dialog.add(label);
+                dialog.pack();
+                dialog.setLocationRelativeTo(this);
+                dialog.setVisible(true);
             }
-        } else {
-            System.out.println("Student Username is not present in gradebook.");
         }
-        System.out.print(Arrays.toString(requestedCourses));
-        
-        this.dispose();
+        //System.out.print(Arrays.toString(requestedCourses));
     }//GEN-LAST:event_SubmitButtonActionPerformed
 
     private void CancelButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButton1ActionPerformed
@@ -165,29 +283,6 @@ public class DeleteStudentWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DeleteStudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DeleteStudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DeleteStudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DeleteStudentWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
